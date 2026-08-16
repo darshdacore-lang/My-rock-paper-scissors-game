@@ -16,12 +16,6 @@ the score will be listed in the terminal
 
 right now the max is 10
 
-## upcomming stuff
-
-more rounds
-
-using electron to make it into an actual app ig
-
 ## how to access the game
 on github.com, make a codespace (green button named "code", click "codespaces")
 
@@ -32,3 +26,9 @@ install the python extension
 once its done, you will see a play button icon in the top left.
 
 press that and you will be able to run and play the game from almost any device
+
+## upcomming stuff
+
+more rounds
+
+make it into an actual macOS app using electron ig 
