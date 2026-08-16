@@ -2,7 +2,7 @@
 
 This is a fun game of rock paper scissors
 
-#how to play
+# how to play
 
 open a codespace
 once it loads, press "run" (or the play button)
@@ -11,7 +11,7 @@ choose between rock paper or scissors
 the score will be listed in the terminal
 right now the max is 10
 
-##upcomming stuff
+## upcomming stuff
 
 more rounds
 using electron to make it into an actual app ig
