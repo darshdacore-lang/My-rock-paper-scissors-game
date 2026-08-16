@@ -2,7 +2,7 @@
 
 This is a fun game of rock paper scissors
 
-# how to play
+## how to play
 
 open a codespace
 once it loads, press "run" (or the play button)
