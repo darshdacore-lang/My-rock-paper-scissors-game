@@ -1,21 +1,26 @@
 import random
 
 print("Welcome to the rock paper scissors game")
-
-num_rounds = int(input("Select the number of rounds you want to play: "))
+print("First to 3 wins takes the game!")
 
 player_score = 0
 computer_score = 0
+round_number = 0
+choices = ["rock", "paper", "scissors"]
 
-#loop through each round
+while player_score < 3 and computer_score < 3:
+    round_number += 1
+    print(f"\nRound {round_number}")
 
-for round in range(num_rounds):
-    print(f"\nRound {round + 1}")
-    player_choice = input("Enter your choice, rock, paper or scissors:").lower()
+    player_choice = input("Enter your choice, rock, paper or scissors: ").lower().strip()
+    while player_choice not in choices:
+        print("Invalid choice. Please choose rock, paper, or scissors.")
+        player_choice = input("Enter your choice, rock, paper or scissors: ").lower().strip()
+
     computer_choice = random.choice(["rock", "paper", "scissors"])
     print(f"Computer chose: {computer_choice}")
     print(f"You chose: {player_choice}")
-    print(f"Round {round + 1} result:")
+    print("Round result:")
 
     if player_choice == computer_choice:
         print("It's a tie!")
@@ -29,3 +34,7 @@ for round in range(num_rounds):
         computer_score += 1
 
 print(f"\nFinal Score - You: {player_score}, Computer: {computer_score}")
+if player_score == 3:
+    print("Congratulations, you won the game!")
+else:
+    print("The computer won the game. Better luck next time!")

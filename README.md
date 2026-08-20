@@ -8,13 +8,11 @@ open a codespace
 
 once it loads, press "run" (or the play button)
 
-type in the number of rounds you want to play against the computer
+the first player to win 3 rounds wins the game
 
 choose between rock paper or scissors 
 
 the score will be listed in the terminal
-
-right now the max is 10
 
 ## how to access the game
 on github.com, make a codespace (green button named "code", click "codespaces")
@@ -27,7 +25,7 @@ once its done, you will see a play button icon in the top left.
 
 press that and you will be able to run and play the game from almost any device
 
-## upcomming stuff
+## upcoming stuff
 
 more rounds
 
