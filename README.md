@@ -25,8 +25,14 @@ once its done, you will see a play button icon in the top left.
 
 press that and you will be able to run and play the game from almost any device
 
+## Current features:
+-First to ten game mode
+-Menu bar (w/ 3 options)
+-Computer vs player
+-Rock, Paper, scissors
+
 ## upcoming stuff
 
-more rounds
+more rounds (customizable amt of rounds)
 
 make it into an actual macOS app using electron ig 
