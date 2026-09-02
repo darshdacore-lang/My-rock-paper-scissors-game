@@ -1,101 +1,93 @@
 import random
 
-from scoreboard import display_scoreboard
 
-CHOICES = ["rock", "paper", "scissors"]
+class Scoreboard:
+    def __init__(self):
+        self.player = 0
+        self.computer = 0
 
+    def add_point(self, winner):
+        if winner == "player":
+            self.player += 1
+        elif winner == "computer":
+            self.computer += 1
 
-def show_menu():
-    print("\n=== ROCK PAPER SCISSORS ===")
-    print("1. Play Game")
-    print("2. How to Play")
-    print("3. Quit")
+    def has_winner(self, target_score):
+        return self.player >= target_score or self.computer >= target_score
 
-
-def show_rules():
-    print("\nHow to play:")
-    print("- Rock beats scissors")
-    print("- Paper beats rock")
-    print("- Scissors beats paper")
-    print("- First to 3 wins the match")
-
-
-def get_player_choice():
-    player_choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
-    while player_choice not in CHOICES:
-        print("Invalid choice. Please choose rock, paper, or scissors.")
-        player_choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
-    return player_choice
+    def display(self):
+        print(f"Score -> You: {self.player} | Computer: {self.computer}")
 
 
-def determine_winner(player_choice, computer_choice):
-    if player_choice == computer_choice:
-        return "tie"
-    if (player_choice == "rock" and computer_choice == "scissors") or \
-       (player_choice == "paper" and computer_choice == "rock") or \
-       (player_choice == "scissors" and computer_choice == "paper"):
-        return "player"
-    return "computer"
+class RockPaperScissorsGame:
+    choices = ("rock", "paper", "scissors")
+    beats = {"rock": "scissors", "paper": "rock", "scissors": "paper"}
 
+    def __init__(self, target_score=3):
+        self.target_score = target_score
+        self.scoreboard = Scoreboard()
+        self.round_number = 0
 
-def play_match():
-    player_score = 0
-    computer_score = 0
-    round_number = 0
+    def play_round(self, player_choice):
+        computer_choice = random.choice(self.choices)
+        self.round_number += 1
 
-    print("\nStarting a new match! First to 3 wins.")
-
-    while player_score < 3 and computer_score < 3:
-        round_number += 1
-        print(f"\nRound {round_number}")
-
-        player_choice = get_player_choice()
-        computer_choice = random.choice(CHOICES)
-
-        print(f"Computer chose: {computer_choice}")
-        print(f"You chose: {player_choice}")
-
-        result = determine_winner(player_choice, computer_choice)
-
-        if result == "tie":
-            print("It's a tie!")
-        elif result == "player":
-            print("You win this round!")
-            player_score += 1
+        if player_choice == computer_choice:
+            result = "tie"
+        elif self.beats[player_choice] == computer_choice:
+            result = "player"
         else:
-            print("Computer wins this round!")
-            computer_score += 1
+            result = "computer"
 
-        print(f"Score -> You: {player_score} | Computer: {computer_score}")
+        self.scoreboard.add_point(result)
+        return computer_choice, result
 
-    display_scoreboard(player_score, computer_score)
+    def is_over(self):
+        return self.scoreboard.has_winner(self.target_score)
 
-    input("\nPress Enter to return to the menu.")
 
+class ConsoleUI:
+    def get_player_choice(self, choices):
+        while True:
+            choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
+            if choice in choices:
+                return choice
+            print("Invalid choice. Please choose rock, paper, or scissors.")
 
-def main():
-    while True:
-        try:
-            show_menu()
+    def play_match(self):
+        game = RockPaperScissorsGame()
+        print(f"\nStarting a new match! First to {game.target_score} wins.")
+
+        while not game.is_over():
+            player_choice = self.get_player_choice(game.choices)
+            computer_choice, result = game.play_round(player_choice)
+
+            print(f"Computer chose: {computer_choice}")
+            print(f"You chose: {player_choice}")
+            print({"tie": "It's a tie!", "player": "You win this round!", "computer": "Computer wins this round!"}[result])
+            game.scoreboard.display()
+
+        winner = "You" if game.scoreboard.player > game.scoreboard.computer else "Computer"
+        print(f"\n{winner} won the match!")
+        input("Press Enter to return to the menu.")
+
+    def run(self):
+        while True:
+            print("\n=== ROCK PAPER SCISSORS ===")
+            print("1. Play Game\n2. How to Play\n3. Quit")
             choice = input("Choose an option (1-3): ").strip()
-        except EOFError:
-            print("\nInput closed. Exiting the game.")
-            break
 
-        if choice == "1":
-            play_match()
-        elif choice == "2":
-            show_rules()
-            try:
-                input("\nPress Enter to return to the menu.")
-            except EOFError:
-                print("\nReturning to the menu.")
-        elif choice == "3":
-            print("\nThanks for playing! Goodbye!")
-            break
-        else:
-            print("Invalid option. Please choose 1, 2, or 3.")
+            if choice == "1":
+                self.play_match()
+            elif choice == "2":
+                print("\nRock beats scissors, paper beats rock, and scissors beats paper.")
+                input("Press Enter to return to the menu.")
+            elif choice == "3":
+                print("\nThanks for playing! Goodbye!")
+                break
+            else:
+                print("Invalid option. Please choose 1, 2, or 3.")
 
 
 if __name__ == "__main__":
-    main()
+    ConsoleUI().run()
