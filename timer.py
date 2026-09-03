@@ -2,6 +2,8 @@ from random import Random, random
 
 def get_timer():
     return random.randint(1, 10)
+"i uh"
+import time
 
 start_time = time.time()
 
