@@ -25,6 +25,8 @@ once its done, you will see a play button icon in the top left.
 
 press that and you will be able to run and play the game from almost any device
 
+(update: to run, use python3 the_game.py)
+
 ## Current features:
 -First to ten game mode
 -Menu bar (w/ 3 options)
