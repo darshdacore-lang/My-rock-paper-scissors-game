@@ -1,40 +1,65 @@
-# My-rock-paper-scissors-game
+# My Rock-Paper-Scissors Game
 
-This is a fun game of rock paper scissors
+A simple Rock–Paper–Scissors terminal game written in Python.
 
-## how to play
+## Table of contents
+- [Demo](#demo)
+- [Requirements](#requirements)
+- [How to run](#how-to-run)
+- [How to play](#how-to-play)
+- [Features](#features)
+- [Upcoming](#upcoming)
+- [Contributing](#contributing)
+- [License](#license)
 
-open a codespace
+## Demo
+Run the game and play against the computer in your terminal or in a GitHub Codespace.
 
-once it loads, press "run" (or the play button)
+## Requirements
+- Python 3.8+ (run `python3 --version` to check)
+- No external Python packages required
 
-the first player to win 3 rounds wins the game
+## How to run
+Run in a Codespace (recommended):
+1. Open the repo on GitHub and click Code → Codespaces → New codespace.
+2. After the Codespace starts, open a terminal and run:
 
-choose between rock paper or scissors 
+```bash
+python3 the_game.py
+```
 
-the score will be listed in the terminal
+Run locally:
 
-## how to access the game
-on github.com, make a codespace (green button named "code", click "codespaces")
+```bash
+git clone https://github.com/darshdacore-lang/My-rock-paper-scissors-game.git
+cd My-rock-paper-scissors-game
+python3 the_game.py
+```
 
-make a new codespace in the cloud (you will need a github account)
+## How to play
+- Choose one of: `rock`, `paper`, or `scissors` when prompted.
+- The computer chooses its move each round.
+- The default game mode is "first to 3 wins".
+- The score is shown in the terminal after each round.
 
-install the python extension
+## Features
+- Default: first to 3 wins
+- Simple menu with three options (Play Game, How to Play, Quit)
+- Play against the computer (random choices)
+- Terminal-based, no GUI required
 
-once its done, you will see a play button icon in the top left.
+## Upcoming
+- Make the number of rounds configurable from the menu
+- Add additional game modes (best of N, timed rounds)
+- Consider packaging as a desktop app (Electron) as an experimental idea
 
-press that and you will be able to run and play the game from almost any device
+## Contributing
+Contributions and suggestions are welcome. Open an issue or submit a pull request.
 
-(update: to run, use python3 the_game.py)
+## License
+This project does not include a license yet. If you want to allow others to reuse your code, consider adding an MIT or other open-source license (add a `LICENSE` file and update this section).
 
-## Current features:
--First to ten game mode
--Menu bar (w/ 3 options)
--Computer vs player
--Rock, Paper, scissors
 
-## upcoming stuff
+---
 
-more rounds (customizable amt of rounds)
-
-make it into an actual macOS app using electron ig 
+Updated README to clarify the default game mode, run instructions, and features.
