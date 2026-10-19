@@ -16,7 +16,7 @@ A simple Rock–Paper–Scissors terminal game written in Python.
 Run the game and play against the computer in your terminal or in a GitHub Codespace.
 
 ## Requirements
-- Python 3.8+ (run `python3 --version` to check)
+- Python 3.8+
 - No external Python packages required
 
 ## How to run
@@ -45,21 +45,16 @@ python3 the_game.py
 ## Features
 - Default: first to 3 wins
 - Simple menu with three options (Play Game, How to Play, Quit)
-- Play against the computer (random choices)
-- Terminal-based, no GUI required
+- Play against the computer
+- Terminal-based gameplay
 
 ## Upcoming
 - Make the number of rounds configurable from the menu
-- Add additional game modes (best of N, timed rounds)
-- Consider packaging as a desktop app (Electron) as an experimental idea
+- Add more game modes
+- Explore a desktop app version
 
 ## Contributing
 Contributions and suggestions are welcome. Open an issue or submit a pull request.
 
 ## License
-This project does not include a license yet. If you want to allow others to reuse your code, consider adding an MIT or other open-source license (add a `LICENSE` file and update this section).
-
-
----
-
-Updated README to clarify the default game mode, run instructions, and features.
+This project does not include a license yet. If you want to allow others to reuse your code, consider adding an MIT license and a `LICENSE` file.
