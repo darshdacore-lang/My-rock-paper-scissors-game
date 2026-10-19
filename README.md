@@ -56,5 +56,3 @@ python3 the_game.py
 ## Contributing
 Contributions and suggestions are welcome. Open an issue or submit a pull request.
 
-## License
-This project does not include a license yet. If you want to allow others to reuse your code, consider adding an MIT license and a `LICENSE` file.
